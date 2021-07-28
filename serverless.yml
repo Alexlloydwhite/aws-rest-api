@@ -21,6 +21,18 @@ functions:
     events:
       - http:
           path: /
+          method: post
+  fetchTodos:
+    handler: src/fetchTodos.handler
+    events:
+      - http:
+          path: /todos
+          method: get
+  fetchTodo:
+    handler: src/fetchTodo.handler
+    events:
+      - http:
+          path: /todo/{id}
           method: get
 
 resources:
