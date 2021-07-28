@@ -1,12 +1,14 @@
 const { v4 } = require("uuid");
 const AWS = require("aws-sdk");
+const middy = require("@middy/core");
+const httpJsonBodyParser = require("@middy/http-json-body-parser");
 
 const addTodo = async (event) => {
 
   const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-  const { todo } = JSON.parse(event.body);
-  const createdAt = new Date().toISOString;
+  const { todo } = event.body;
+  const createdAt = new Date().toISOString();
   const id = v4();
 
   console.log(`IN addTodo - ID: ${id}`);
@@ -25,10 +27,15 @@ const addTodo = async (event) => {
 
   return {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+      "Access-Control-Allow-Credentials" : true, // Required for cookies, authorization headers with HTTPS
+      "Access-Control-Allow-Methods": "POST" // Allow only POST request 
+    },
     body: JSON.stringify(newTodo),
   };
 };
 
 module.exports = {
-  handler: addTodo
+  handler: middy(addTodo).use(httpJsonBodyParser())
 }

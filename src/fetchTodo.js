@@ -19,6 +19,11 @@ const fetchTodo = async (event) => {
 
     return {
         statusCode: 200,
+        headers: {
+            "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+            "Access-Control-Allow-Credentials" : true, // Required for cookies, authorization headers with HTTPS
+            "Access-Control-Allow-Methods": "GET" // Allow only GET request 
+          },
         body: JSON.stringify(todo),
     };
 };

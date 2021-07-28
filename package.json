@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Alexlloydwhite/aws-rest-api#readme",
   "dependencies": {
+    "@middy/core": "^2.4.3",
+    "@middy/http-json-body-parser": "^2.4.3",
     "aws-sdk": "^2.956.0",
     "uuid": "^8.3.2"
   }
