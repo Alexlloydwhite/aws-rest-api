@@ -1,10 +1,17 @@
 # Serverless Framework Node REST API on AWS
 
-AWS Lambda Serverless Framework
+## Description
 
-## Tech Used
+Serverless framework for a React / TypeScript CRUD app.
+
+[Front end](https://github.com/Alexlloydwhite/aws-react-todo-list)
+
+
+## Built With
 
 - AWS Lambda
 - AWS DynamoDB
 - [Serverless](https://www.serverless.com/)
 - JavaScript
+- UUID
+- Middy
