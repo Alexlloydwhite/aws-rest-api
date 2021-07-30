@@ -4,7 +4,7 @@
 
 Serverless framework for a React / TypeScript CRUD app.
 
-[Front end](https://github.com/Alexlloydwhite/aws-react-todo-list)
+[Front End](https://github.com/Alexlloydwhite/aws-react-todo-list)
 
 
 ## Built With
