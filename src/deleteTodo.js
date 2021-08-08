@@ -19,7 +19,9 @@ const deleteTodo = async (event) => {
             "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
             "Access-Control-Allow-Methods": "DELETE" // Allow only DELETE request 
         },
-        body: JSON.stringify(todo),
+        body: JSON.stringify({
+            msg: "Task Deleted"
+        }),
     };
 };
 

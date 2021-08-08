@@ -48,9 +48,9 @@ functions:
     handler: src/deleteTodo.handler
     events:
       - http:
-        path: /todo/{id}
-        method: delete
-        cors: true
+          path: /todo/{id}
+          method: delete
+          cors: true
 
 resources:
   Resources:
