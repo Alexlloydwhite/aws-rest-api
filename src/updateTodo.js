@@ -1,4 +1,3 @@
-const { v4 } = require("uuid");
 const AWS = require("aws-sdk");
 const middy = require("@middy/core");
 const httpJsonBodyParser = require("@middy/http-json-body-parser");
