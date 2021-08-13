@@ -11,6 +11,8 @@ Serverless framework for a React / TypeScript CRUD app.
 
 - AWS Lambda
 - AWS DynamoDB
+- AWS CloudWatch
+- AWS S3
 - [Serverless](https://www.serverless.com/)
 - JavaScript
 - UUID
