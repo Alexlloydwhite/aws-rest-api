@@ -22,7 +22,7 @@ const editTodo = async(event) => {
         headers: {
             "Access-Control-Allow-Origin": "*", // Required for CORS support to work
             "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
-            "Access-Control-Allow-Methods": "GET" // Allow only GET request 
+            "Access-Control-Allow-Methods": "PUT" // Allow only PUT request 
         },
         body: JSON.stringify({
             msg: "Todo Updated"
