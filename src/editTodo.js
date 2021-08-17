@@ -13,7 +13,7 @@ const editTodo = async(event) => {
             Key: { id },
             UpdateExpression: 'set todo = :editedTodo',
             ExpressionAttributeValues: {
-                ':todo': editedTodo
+                ':editedTodo': editedTodo
             },
             ReturnValues: "ALL_NEW"
         })
