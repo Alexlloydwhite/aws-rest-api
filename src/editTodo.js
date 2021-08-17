@@ -1,21 +1,20 @@
 const AWS = require("aws-sdk");
 
 const editTodo = async(event) => {
-
     const dynamodb = new AWS.DynamoDB.DocumentClient();
 
     const { editedTodo } = JSON.parse(event.body);
-    const { id } = event.pathParameters
+    const { id } = event.pathParameters;
 
     await dynamodb
         .update({
             TableName: "TodoTable",
             Key: { id },
-            UpdateExpression: 'set todo = :editedTodo',
+            UpdateExpression: "set todo = :editedTodo",
             ExpressionAttributeValues: {
-                ':editedTodo': editedTodo
+                ":editedTodo": editedTodo,
             },
-            ReturnValues: "ALL_NEW"
+            ReturnValues: "ALL_NEW",
         })
         .promise();
 
@@ -24,14 +23,14 @@ const editTodo = async(event) => {
         headers: {
             "Access-Control-Allow-Origin": "*", // Required for CORS support to work
             "Access-Control-Allow-Credentials": true, // Required for cookies, authorization headers with HTTPS
-            "Access-Control-Allow-Methods": "PUT" // Allow only PUT request 
+            "Access-Control-Allow-Methods": "PUT", // Allow only PUT request
         },
         body: JSON.stringify({
-            msg: "Todo Updated"
+            msg: "Todo Updated",
         }),
     };
 };
 
 module.exports = {
-    handler: editTodo
-}
+    handler: editTodo,
+};
