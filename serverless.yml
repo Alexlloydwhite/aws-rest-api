@@ -48,7 +48,7 @@ functions:
     handler: src/editTodo.handler
     events:
       - http:
-          path: /edit-todo/{id}
+          path: /todo/edit/{id}
           method: put
           cors: true
   deleteTodo:

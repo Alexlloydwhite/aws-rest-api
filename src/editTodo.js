@@ -7,15 +7,17 @@ const editTodo = async(event) => {
     const { editedTodo } = JSON.parse(event.body);
     const { id } = event.pathParameters
 
-    await dynamodb.update({
-        TableName: "TodoTable",
-        Key: { id },
-        UpdateExpression: 'set todo = :editedTodo',
-        ExpressionAttributeValues: {
-            ':todo': editedTodo
-        },
-        ReturnValues: "ALL_NEW"
-    }).promise();
+    await dynamodb
+        .update({
+            TableName: "TodoTable",
+            Key: { id },
+            UpdateExpression: 'set todo = :editedTodo',
+            ExpressionAttributeValues: {
+                ':todo': editedTodo
+            },
+            ReturnValues: "ALL_NEW"
+        })
+        .promise();
 
     return {
         statusCode: 200,
