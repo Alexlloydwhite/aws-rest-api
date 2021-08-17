@@ -44,6 +44,13 @@ functions:
           path: /todo/{id}
           method: put
           cors: true
+  editTodo:
+    handler: src/editTodo.handler
+    events:
+      - http:
+          path: /todo/{id}
+          method: put
+          cors: true
   deleteTodo:
     handler: src/deleteTodo.handler
     events:
